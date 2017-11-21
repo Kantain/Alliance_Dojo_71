@@ -6,7 +6,7 @@ class Formulaire{
 		$this->form="<form action=" . $_action . " method=" . $_method . ">";
 	}
 
-	function ajout_input($_type,$_name,$_required=false,$_placeholder=""){
+	function ajout_input($_type,$_name,$_placeholder,$_required=false){
 		$this->form .= "<input type=" . $_type . " name=" . $_name;
 		if($_required)
 			$this->form .= "required";
