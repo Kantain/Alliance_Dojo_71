@@ -12,13 +12,13 @@ include("classes/form.php");
 	<header></header>
 	<nav></nav>
 	<main>
-		<div>
+		<div class="connexion">
 			<?php 
 			echo "test";
 			$form = new Formulaire("post","test");
-			$form->ajout_input("text","login");
-			$form->ajout_input("password","mdp");
-			$form->ajout_input("submit","submit");
+			$form->ajout_input("text","login","Login",true);
+			$form->ajout_input("password","mdp","Mot de passe",true);
+			$form->ajout_input("submit","submit","",true);
 			echo $form->get_form();
 			?>
 		</div>
