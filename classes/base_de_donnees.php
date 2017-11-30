@@ -1,28 +1,33 @@
 <?php
 	class bd{
-		private $dsn ='mysql:host=localhost;port=3306;dbname=alliance_dojo_71';
+		private $dsn ='mysql:host=localhost;port=3306;dbname=test; charset=utf8';
+		private $pdo;
 
-		function connect(){
+
+		function __construct(){
 			try{
-
-				$pdo = new PDO($dsn, 'root', '');
-				
-
-
+				$this->pdo = new PDO($this->dsn, 'root','');
 			}
 			catch (PDOException $e){
 				die("Erreur :". $e->getMessage());
 			}
 		}
 
-		function requete($row){
-			$requet="select * from jeux_video";
-			$stmt=$pdo->query($requet);
-			while($row = $stmt->fetch()){
-				echo $row[0];
-			}
+		function requete($rqt){
+			//var_dump($this->pdo->query($rqt));
+			$stmt=$this->pdo->query($rqt);
+			//var_dump($stmt);
+			$rows = $stmt->fetchAll();
 
-			return $row;
+			foreach($rows as $row){
+				echo $row[0]." ";
+				echo $row[1]." ";
+				echo $row[2]." ";
+				echo $row[3]." ";
+				echo $row[4]." ";
+				echo $row[5]." ";
+				echo $row[6]." <br/>";
+			}
 		}
 
 
