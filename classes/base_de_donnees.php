@@ -14,19 +14,11 @@
 		}
 
 		function requete($rqt){
-			//var_dump($this->pdo->query($rqt));
 			$stmt=$this->pdo->query($rqt);
-			//var_dump($stmt);
 			$rows = $stmt->fetchAll();
 
 			foreach($rows as $row){
-				echo $row[0]." ";
-				echo $row[1]." ";
-				echo $row[2]." ";
-				echo $row[3]." ";
-				echo $row[4]." ";
-				echo $row[5]." ";
-				echo $row[6]." <br/>";
+				echo $row;
 			}
 		}
 

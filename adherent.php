@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['root']=dirname(__FILE__);
 
 require_once("classes/Form.php");
 require_once("classes/html.php");
@@ -20,9 +19,8 @@ require_once("classes/html.php");
 	<main>
 		<?php
 		echo '<div class="compte">';
-		echo $html->ecran_connexion();
-		echo $html->entree_anonyme();
-		echo "</div>";
+		echo $html->form_infos();
+		echo '</div>';
 		?>
 	</main>
 </body>
