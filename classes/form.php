@@ -110,8 +110,26 @@
 
 		public function add_radio($_nb_bt,$_name,array $_tab){
 			for ($i=0; $i < $_nb_bt; $i++) { 
-				$this->form .= '<label><input type="radio" name="' . $_name . '" value="' . $_tab[$i] . '">' . $_tab[$i] . '</label>';
+				$this->form .= '<div class="group"><label><input type="radio" name="' . $_name . '" value="' . $_tab[$i] . '">' . $_tab[$i] . '</label></div>';
 			}
+		}
+
+		public function set_input_file($_type,$_name,$_placeholder,$_required){
+			$this->form .= '<div class="group"><label>Photo</label><br><input type="' .$_type. '"';
+
+			if($_name != ""){
+				$this->form .= " name='".$_name."'";
+			}
+
+			/*if($_placeholder != ""){
+				$this->form .= " placeholder='".$_placeholder."'";
+			}*/
+
+			if($_required){
+				$this->form .= " required";
+			}
+
+			$this->form .= "></div>";
 		}
 	}
 ?>

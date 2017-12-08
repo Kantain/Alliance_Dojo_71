@@ -76,22 +76,32 @@ class HTML{
 	}
 
 	public function entree_anonyme(){
-		$code = "";
+		$code = '<a href="adherent.php">Accès adhérent</a>';
 
-		$form = new form("anonyme","adherent.php","post","");
-		$form->set_submit("","Acces adhérent");
-
-		return $code .= $form->get_form();
+		return $code;
 	}
 
 	public function form_infos(){
-		$code = "";
+		$code = "<p>Veuillez remplir ce formulaire</p><br>";
 
 		$form = new form("infos_adherents","fonctions/traitement_form_infos.php","post","");
 		$form->set_input("text","no_adherent","N° adhérent",1);
 		$form->set_input("text","nom","Nom",1);
 		$form->set_input("text","prenom","Prénom",1);
 		$form->add_radio(2,"sexe",$array = ["H","F"]);
+		$form->set_input("date","date_naissance","Date de naissance",1);
+		$form->set_input("text","lieu_naissance","Lieu de naissance",1);
+		$form->set_input("text","nationalite","Nationalité",1);
+		$form->set_input("text","no_secu","N° de Sécurité Sociale",1);
+		$form->set_input("text","adresse","Adresse",1);
+		$form->set_input("text","code_postal","Code Postal",1);
+		$form->set_input("text","ville","Ville",1);
+		$form->set_input("text","tel_fixe","Tel. fixe",1);
+		$form->set_input("text","tel_portable_1","Tel. portable 1",1);
+		$form->set_input("text","tel_portable_2","Tel. portable 2",1);
+		$form->set_input("email","email","e-mail",1);
+		$form->set_input_file("file","photo","Photo",1);
+		$form->set_submit("valider_infos","Envoyer");
 
 		return $code .= $form->get_form();
 	}
