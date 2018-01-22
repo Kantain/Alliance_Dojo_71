@@ -155,9 +155,73 @@ input[type=submit]
 	background-color: #d1d1d1;
 }
 
+.date
+{
+	text-align: center;
+	position:relative;
+}
+
+.date label
+{
+	color:#999; 
+	font-size:18px;
+	font-weight:normal;
+	position:absolute;
+	pointer-events:none;
+	right:-150px;
+	top:10px;
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+
+.date input:focus ~ label, .date input:valid ~ label
+{
+	top:-10px;
+	left: -350px;
+	font-size:14px;
+	color:#19a3e8;
+}
+
+.sexe label
+{
+	color:#999; 
+	font-size:18px;
+	font-weight:normal;
+	pointer-events:none;
+	position: relative;
+	top:0;
+	left:-95px;
+}
+
+.sexe input
+{
+	display: inline;
+	position: relative;
+	width: 20px;
+}
+
+.newsletter input
+{
+	display: inline;
+	position: relative;
+	width: 0px;
+}
+
+.newsletter label
+{
+	color:#999; 
+	font-size:18px;
+	font-weight:normal;
+	pointer-events:none;
+	position: relative;
+	top:0;
+	left:-100px;
+}
+
 input:focus 		
 { 
-	outline:none; 
+	outline:none;
 }
 
 label 				 

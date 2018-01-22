@@ -131,5 +131,37 @@
 
 			$this->form .= "></div>";
 		}
+
+		public function set_input_date($_type,$_name,$_placeholder,$_required){
+			$this->form .= '<div class="date"><input type="' .$_type. '"';
+
+			if($_name != ""){
+				$this->form .= " name='".$_name."'";
+			}
+
+			/*if($_placeholder != ""){
+				$this->form .= " placeholder='".$_placeholder."'";
+			}*/
+
+			if($_required){
+				$this->form .= " required";
+			}
+
+			$this->form .= ">";
+			$this->form .= '<span class="highlight"></span><span class="bar"></span>';
+			$this->form .= '<label>' . $_placeholder . '</label></div>';
+		}
+
+		public function set_input_sexe(){
+			$this->form .= '<div class="sexe"><label>Sexe</label>
+								<input type="radio" name="sexe" value="H" required>H<input type="radio" name="sexe" value="F" required>F
+							</div>';
+		}
+
+		public function set_input_newsletter(){
+			$this->form .= '<div class="newsletter"><label>Newsletter</label>
+								<input type="checkbox" name="newsletter" value="H">
+							</div>';
+		}
 	}
 ?>

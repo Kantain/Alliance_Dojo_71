@@ -81,6 +81,12 @@ class HTML{
 		return $code;
 	}
 
+	public function index(){
+		$code ='<a href="index.php">Retour</a>';
+
+		return $code;
+	}
+
 	public function form_infos(){
 		$code = "<p>Veuillez remplir ce formulaire</p><br>";
 
@@ -88,8 +94,8 @@ class HTML{
 		$form->set_input("text","no_adherent","N° adhérent",1);
 		$form->set_input("text","nom","Nom",1);
 		$form->set_input("text","prenom","Prénom",1);
-		$form->add_radio(2,"sexe",$array = ["H","F"]);
-		$form->set_input("date","date_naissance","Date de naissance",1);
+		$form->set_input_sexe();
+		$form->set_input_date("date","date_naissance","Date de naissance",1);
 		$form->set_input("text","lieu_naissance","Lieu de naissance",1);
 		$form->set_input("text","nationalite","Nationalité",1);
 		$form->set_input("text","no_secu","N° de Sécurité Sociale",1);
@@ -100,6 +106,7 @@ class HTML{
 		$form->set_input("text","tel_portable_1","Tel. portable 1",1);
 		$form->set_input("text","tel_portable_2","Tel. portable 2",1);
 		$form->set_input("email","email","e-mail",1);
+		$form->set_input_newsletter();
 		$form->set_input_file("file","photo","Photo",1);
 		$form->set_submit("valider_infos","Envoyer");
 

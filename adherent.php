@@ -18,6 +18,7 @@ require_once("classes/html.php");
 	?>
 	<main>
 		<?php
+		echo $html->index();
 		echo '<div class="compte">';
 		echo $html->form_infos();
 		echo '</div>';
